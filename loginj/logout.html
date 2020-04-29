@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="./animate.css-master/animate.css">
+        </head>
+<body>
+
+<section class="login-page">
+  	 <form>
+  	 	 <div class="box">
+  	 	 	   <div class="form-head">
+  	 	 	   	 
+  	 	 	   </div>
+  	 	 	   <div class="form-body">
+  	 	 	   	  
+  	 	 	   </div>
+  	 	 	   <div class="form-footer" >
+                  <h2 style="color: aliceblue">Confirm from resubmission</h2>
+                   <p style="color: aliceblue">For a new session we strongly recommend you to log out and close the browser tab</p>
+  	 	 	   	  <p id="getl" style="cursor: pointer;color: gold ;" >Log out</p>
+                   
+                   <br>
+                                       <h3 id="uu" style="color:green;" ></h3>
+  	 	 	   </div>
+  	 	 </div>
+  	 </form>
+  </section>
+
+
+<script>
+
+    
+ 
+ document.getElementById("getl").addEventListener("click",getLocation);
+    
+    
+  
+function getLocation() {
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+
+    
+    var user = firebase.auth().currentUser;
+
+    if(user != null ){
+
+      var email_id = user.email;
+      window.alert(email_id);
+
+    }
+
+  } else {
+    // No user is signed in.if(fg.style.display==="block"){
+        
+    
+      
+
+
+                      document.getElementById("uu").innerHTML="You are Succesfully logged out!!";
+
+  }
+});
+    sessionStorage.clear("emkey");
+    
+    firebase.auth().signOut();
+}
+    
+    /*var fg= document.getElementById("kk");
+    if(fg.style.display==="none"){
+        fg.style.display="block";
+        
+        
+    }else{
+        fg.style.display="none";
+    }
+ var cordiref= firebase.database().ref("cordi/");
+        cordiref.orderByChild("email").equalTo(document.getElementById("emailk").value).on("child_added", function(data){
+          var newVok= data.val();
+            var ty=newVok.email;
+                var uh=newVok.newpassword;
+            if(ty==document.getElementById("emailk").value && uh==document.getElementById("password").value)
+                {
+                    var hq=0;
+                    var lq=0;
+                    sessionStorage.setItem("emkey",ty);
+                    sessionStorage.setItem("gjk",hq);
+                     sessionStorage.setItem("tjk",lq);
+                    
+                     
+                    window.open('practice.html','_self');
+                }
+            else
+                {
+                    
+                     window.open('ki.html','_self');
+                }
+            });*/
+
+    
+</script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+    var config = {
+ apiKey: "AIzaSyDN16XLfkDqVgt5h0tpXdMgfEJ5zc1iM9c",
+    authDomain: "crime-reporting-app-4442a.firebaseapp.com",
+    databaseURL: "https://crime-reporting-app-4442a.firebaseio.com",
+    projectId: "crime-reporting-app-4442a",
+    storageBucket: "crime-reporting-app-4442a.appspot.com",
+    messagingSenderId: "524586625644",
+    appId: "1:524586625644:web:03a76475ef62c4d4b5c649",
+    measurementId: "G-FGCGMFQV2X"
+ 
+  };
+     firebase.initializeApp(config);
+    console.log(firebase);
+  
+    
+    
+      // Set the configuration for your app
+  // TODO: Replace with your project's config object
+  
+ 
+
+  // Get a reference to the database service
+  
+        
+</script>
+
+</body>
+</html>

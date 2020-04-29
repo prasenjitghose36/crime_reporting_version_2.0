@@ -1,0 +1,95 @@
+body{
+	margin:0;
+	padding: 0;
+	font-family: sans-serif;
+}
+*{
+	box-sizing: border-box;
+	outline: none!important;
+}
+@media screen and (max-width:720px){
+.login-page{
+	background-image: url('../img/bg.jpeg');
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+}
+@media screen and (min-width:721px){
+.login-page{
+	background-image: url('../img/adult-art-caution-cold-350614.jpg');
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+}
+.login-page:after{
+content: '';
+position: absolute;
+left: 0px;
+top: 0px;
+height: 100%;
+width: 100%;
+background-color: rgba(0,0,0,.5);
+z-index: 1;
+}
+.login-page .box{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	z-index: 2;
+}
+
+.login-page .box .form-head h2{
+text-align: center;
+margin:10px 0px 20px;
+color:#ffffff;
+}
+
+.login-page .box .form-body{
+display: flex;
+flex-direction: column;
+}
+.login-page .box .form-body input{
+height: 40px;
+margin-bottom: 20px;
+border:1px solid #ffffff;
+width: 100%;
+background-color: transparent;
+border-radius: 20px;
+text-align: center;
+color:#ffffff;
+transition:box-shadow .5s ease;
+}
+.login-page .box .form-body input:focus{
+	box-shadow: 0px 0px 10px black;
+}
+.login-page .box .form-body input::placeholder{
+	color:#ffffff;
+	}
+	.login-page .box .form-footer {
+		text-align: center;
+
+	}
+.login-page .box .form-footer button{
+
+	height: 40px;
+	border-radius: 20px;
+	padding: 0px 50px;
+	color:#ffffff;
+	background-color: #f44336;
+	border:none;
+	cursor: pointer;
+	transition:box-shadow .5s ease;
+}
+.login-page .box .form-footer button:hover{
+	box-shadow: 0px 0px 10px black;
+}
+
+
+
+
