@@ -94,12 +94,12 @@ Up until the end of the eighteenth century crime was associated with acts of per
         fg.style.display="none";
     }
                  var Yg= document.getElementById("fjj");
-    if(fg.style.display==="none"){
-        fg.style.display="block";
+    if(Yg.style.display==="none"){
+        Yg.style.display="block";
         
         
     }else{
-        fg.style.display="none";
+        Yg.style.display="none";
     }
                  
                  
@@ -142,7 +142,10 @@ function showPosition(position) {
         longitude:position.coords.longitude
         
     }
-     kpliref.push(data)
+     kpliref.push(data).then(function(){
+                             window.alert("Your complain has been succesfully submitted");
+            window.open('choice.html','_self');
+                             });
  });   
     
 }

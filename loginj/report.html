@@ -97,12 +97,12 @@ Up until the end of the eighteenth century crime was associated with acts of per
         fg.style.display="none";
     }
                  var Yg= document.getElementById("fjj");
-    if(fg.style.display==="none"){
-        fg.style.display="block";
+    if(Yg.style.display==="none"){
+        Yg.style.display="block";
         
         
     }else{
-        fg.style.display="none";
+        Yg.style.display="none";
     }
                  
                  
@@ -119,7 +119,7 @@ function showPosition(position) {
         cordiref.orderByChild("email").equalTo(emkey).on("child_added", function(data){
           var newVok= data.val();
             var ty=newVok.name;
-            
+
             
             
     
@@ -136,7 +136,7 @@ function showPosition(position) {
                 if(progress==100)
                     {
                         window.alert("complain submitted sucessfully");
-                         window.open('logout.html','_self');
+                         window.open('choice.html','_self');
                         
                     }
             },function(error){
@@ -172,10 +172,7 @@ function showPosition(position) {
     
 }
                   function showError(error) {
-                      var cordiref= firebase.database().ref("crimecredential/");
-        cordiref.orderByChild("email").equalTo(emkey).on("child_added", function(data){
-          var newVok= data.val();
-            var ty=newVok.name;
+                      
             
             
             
@@ -196,8 +193,9 @@ function showPosition(position) {
       break;
   }
 }
+             }
     
-            }
+            
             
         
         

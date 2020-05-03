@@ -33,10 +33,11 @@
 
 
 <script>
-   var emkey= sessionStorage.getItem("emkey");
+    var c=0;
+var emkey=sessionStorage.getItem("emkey");
     if(emkey!=null)
         {
-            window.open('logout.html','_self');
+            window.open('choice.html','_self');
         }
     
  
@@ -61,12 +62,33 @@ function getLocation() {
     var user = firebase.auth().currentUser;
 
     if(user != null ){
-
-      var email_id = user.email;
+        
+     var emailVerified = user.emailVerified;
+        if(emailVerified==false)
+            {
+                sessionStorage.setItem("vmkey",email_id);
+            user.sendEmailVerification().then(function() {
+            
+   var emailVerified = user.emailVerified;
+                
+window.alert("you have not completed your email verification please complete it first!");
+        
+ window.open('verify.html','_self');
+    
+}).catch(function(error) {
+  // An error happened.
+});
+            }
+       else {
+             var email_id = user.email;
         sessionStorage.setItem("emkey",email_id);
-      window.open('choice.html','_self');
-
-    }
+      window.open('choice.html','_self');  
+                
+}
+                    
+            
+        }
+    
 
   } else {
     // No user is signed in.
@@ -74,6 +96,7 @@ function getLocation() {
 
 
   }
+  
 });
 
     

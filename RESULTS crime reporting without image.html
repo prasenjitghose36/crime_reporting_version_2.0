@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+        </head>
+<body>
+
+
+<button onclick="getLocation()">show</button>
+    
+<script>
+    
+        
+  
+var rmsg="no";
+ 
+    
+   
+ 
+function getLocation() {
+   
+     var hjcordiref= firebase.database().ref('complaints/');
+     hjcordiref.orderByChild("email").on("child_added", function(data){
+          var newVoke= data.val();
+    
+    var remail=newVoke.email;
+         
+         var trepo=newVoke.timereported;
+          var drepo=newVoke.datereported;
+ 
+            if( rmsg!=newVoke.message)
+            {
+               rmsg=newVoke.message;
+                
+           
+            
+         document.write("name"+":"+" "+newVoke.name+"<br>");
+         document.write("date"+":"+" "+newVoke.date+"<br>");
+         document.write("place"+":"+" "+newVoke.place+"<br>");
+         document.write("complaint"+":"+" "+newVoke.message+"<br>");
+           document.write("Date Reported"+":"+" "+drepo+"<br>");
+          document.write("Time Reported"+":"+" "+trepo+"<br>");
+         document.write("Latitude"+":"+" "+newVoke.latitude+"<br>");
+          document.write("Longitude"+":"+" "+newVoke.longitude+"<br>");
+         document.write("<br>"+"<br>");
+            }
+              });
+           
+         
+    }
+    
+
+    
+</script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+    var config = {
+    apiKey: "AIzaSyDN16XLfkDqVgt5h0tpXdMgfEJ5zc1iM9c",
+    authDomain: "crime-reporting-app-4442a.firebaseapp.com",
+    databaseURL: "https://crime-reporting-app-4442a.firebaseio.com",
+    projectId: "crime-reporting-app-4442a",
+    storageBucket: "crime-reporting-app-4442a.appspot.com",
+    messagingSenderId: "524586625644",
+    appId: "1:524586625644:web:03a76475ef62c4d4b5c649",
+    measurementId: "G-FGCGMFQV2X"
+  };
+     firebase.initializeApp(config);
+    console.log(firebase);
+  
+    
+    
+      // Set the configuration for your app
+  // TODO: Replace with your project's config object
+  
+ 
+
+  // Get a reference to the database service
+  
+        
+</script>
+
+</body>
+</html>
